@@ -81,6 +81,8 @@ public class MovimientoJugador : MonoBehaviour
 
         _anim.SetFloat("velocidadY", _rb.velocity.y);
 
+        _anim.SetBool("Agachado", Input.GetKey(teclaAgachado));
+
     }
 
     private void FixedUpdate()

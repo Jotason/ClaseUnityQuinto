@@ -13,6 +13,7 @@ public class EstadoCaer : EstadoBase
     {
         //controlador._anim.CrossFade("Caer", 0.1f);
         Debug.Log("entrada estado caer");
+        controlador._anim.SetBool("Caer", true);
 
     }
 
@@ -40,6 +41,8 @@ public class EstadoCaer : EstadoBase
 
     public override void SalidaEstado(EstadoBase nuevoEstado)
     {
+
+        controlador._anim.SetBool("Caer", false);
         controlador.CambiarEstado(nuevoEstado);
     }
 

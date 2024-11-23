@@ -12,7 +12,6 @@ public class EstadoAgachado : EstadoBase
     }
     public override void EntradaEstado()
     {
-        controlador._anim.SetBool("Agachado", true);
         //controlador._anim.CrossFade("Agachado", 0.1f);
     }
     public override void UpdateEstado()
@@ -35,7 +34,6 @@ public class EstadoAgachado : EstadoBase
 
     public override void SalidaEstado(EstadoBase nuevoEstado)
     {
-        controlador._anim.SetBool("Agachado", false);
         controlador.CambiarEstado(nuevoEstado);
     }
 }
