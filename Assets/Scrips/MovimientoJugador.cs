@@ -28,6 +28,11 @@ public class MovimientoJugador : MonoBehaviour
     public KeyCode teclaAgachado;
     public KeyCode teclaSaltar;
 
+    bool mirandoDerecha = true;
+
+    [SerializeField] float rotacionObjetivoY;
+    [SerializeField]float velocidadRotacion ;
+
     public Vector3 detect;
 
     [SerializeField] Transform pivoteDeteccion;
@@ -70,13 +75,29 @@ public class MovimientoJugador : MonoBehaviour
         //vertical = Input.GetAxis("vertical");
         Debug.Log(_rb.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            transform.rotation = Quaternion.LookRotation(Vector3.left);
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    transform.rotation = Quaternion.LookRotation(Vector3.left);
+        //}
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    transform.rotation = Quaternion.LookRotation(Vector3.right);
+        //}
+
+        if (horizontal < 0 && mirandoDerecha == true || horizontal>0 && mirandoDerecha == false) {
+            mirandoDerecha = !mirandoDerecha;
+            if (mirandoDerecha == true)
+            {
+                rotacionObjetivoY = 90;
+            }
+            else {
+                rotacionObjetivoY = -90;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            transform.rotation = Quaternion.LookRotation(Vector3.right);
+
+        if (transform.eulerAngles.y != rotacionObjetivoY) {
+
+            transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.Euler(transform.eulerAngles.x, rotacionObjetivoY, transform.eulerAngles.z), velocidadRotacion * Time.deltaTime);
         }
 
         _anim.SetFloat("velocidadY", _rb.velocity.y);

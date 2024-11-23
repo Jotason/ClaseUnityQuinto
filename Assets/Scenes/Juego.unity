@@ -1783,6 +1783,8 @@ MonoBehaviour:
   velocidadMovimiento: 10
   teclaAgachado: 306
   teclaSaltar: 119
+  rotacionObjetivoY: 90
+  velocidadRotacion: 500
   detect: {x: 1, y: 0.2, z: 1}
   pivoteDeteccion: {fileID: 750498482}
   capasDeteccion:
@@ -1842,7 +1844,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1 &2094468278
 GameObject:
