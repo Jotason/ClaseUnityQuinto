@@ -22,17 +22,17 @@ public class EstadoCaminar : EstadoBase
             if (Input.GetKeyDown(controlador.teclaSaltar))
             {
 
-                controlador.CambiarEstado(controlador._salto);
+                SalidaEstado(controlador._salto);
                 //controlador._rb.AddForce(Vector3.up * controlador.jumpForce);
 
             }
             else if (Input.GetKey(controlador.teclaAgachado))
             {
-                controlador.CambiarEstado(controlador._agachado);
+                SalidaEstado(controlador._agachado);
             }
             else if (controlador.horizontal == 0)
             {
-                controlador.CambiarEstado(controlador._idle);
+                SalidaEstado(controlador._idle);
             }
         }
 
@@ -41,7 +41,7 @@ public class EstadoCaminar : EstadoBase
 
             if (controlador._rb.velocity.y <= 0)
             {
-                controlador.CambiarEstado(controlador._caer);
+                SalidaEstado(controlador._caer);
             }
 
         }

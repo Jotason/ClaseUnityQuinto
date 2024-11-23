@@ -20,17 +20,17 @@ public class EstadoCaer : EstadoBase
     {
         //if (controlador.isGround == true )
         //{
-        //    controlador.CambiarEstado(controlador._idle);
+        //    SalidaEstado(controlador._idle);
         //}
 
         if (controlador.tocandoPiso == true) {
             if (controlador.horizontal == 0)
             {
-                controlador.CambiarEstado(controlador._idle);
+                SalidaEstado(controlador._idle);
             }
             else {
 
-                controlador.CambiarEstado(controlador._caminar);
+                SalidaEstado(controlador._caminar);
 
             }
         }

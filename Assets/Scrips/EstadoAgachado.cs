@@ -21,7 +21,7 @@ public class EstadoAgachado : EstadoBase
 
             if (Input.GetKeyUp(controlador.teclaAgachado))
             {
-                controlador.CambiarEstado(controlador._idle);
+                SalidaEstado(controlador._idle);
             }
         }
         
@@ -35,6 +35,7 @@ public class EstadoAgachado : EstadoBase
 
     public override void SalidaEstado(EstadoBase nuevoEstado)
     {
+        controlador._anim.SetBool("Agachado", false);
         controlador.CambiarEstado(nuevoEstado);
     }
 }

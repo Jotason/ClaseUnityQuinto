@@ -25,18 +25,18 @@ public class EstadoSalto : EstadoBase
             if (controlador.tocandoPiso == false)
             {
                 Debug.Log("si entro salto");
-                controlador.CambiarEstado(controlador._caer);
+                SalidaEstado(controlador._caer);
             }
             else
             {
 
                 if (controlador.horizontal == 0)
                 {
-                    controlador.CambiarEstado(controlador._idle);
+                    SalidaEstado(controlador._idle);
                 }
                 else
                 {
-                    controlador.CambiarEstado(controlador._caminar);
+                    SalidaEstado(controlador._caminar);
 
                 }
             }

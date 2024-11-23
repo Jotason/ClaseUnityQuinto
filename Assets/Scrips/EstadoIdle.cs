@@ -22,17 +22,17 @@ public class EstadoIdle : EstadoBase
         {
             if (Input.GetKeyDown(controlador.teclaSaltar))
             {
-                controlador.CambiarEstado(controlador._salto);
+                SalidaEstado(controlador._salto);
             }
 
             else if (Input.GetKey(controlador.teclaAgachado))
             {
-                controlador.CambiarEstado(controlador._agachado);
+                SalidaEstado(controlador._agachado);
             }
 
             else if (controlador.horizontal != 0)
             {
-                controlador.CambiarEstado(controlador._caminar);
+                SalidaEstado(controlador._caminar);
             }
         }
 
@@ -40,7 +40,7 @@ public class EstadoIdle : EstadoBase
         {
             if (controlador._rb.velocity.y <= 0)
             {
-                controlador.CambiarEstado(controlador._caer);
+                SalidaEstado(controlador._caer);
             }
         }
 
