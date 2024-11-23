@@ -43,6 +43,8 @@ public class MovimientoJugador : MonoBehaviour
     public bool isGround;
     public float FuerzaSalto;
 
+    bool estadoMovimiento; 
+
     //public Transform pie;
 
     void Start()
@@ -64,51 +66,61 @@ public class MovimientoJugador : MonoBehaviour
 
         CambiarEstado(_idle);
 
+        AdministradorJuego.instance.EventoJuegoIniciado += ActivarMovimiento;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        estadoActual.UpdateEstado();
-        horizontal =  Input.GetAxis("Horizontal");
-        _anim.SetFloat("Horizontal" , horizontal);
-        //vertical = Input.GetAxis("vertical");
-        Debug.Log(_rb.velocity.y);
+        
 
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    transform.rotation = Quaternion.LookRotation(Vector3.left);
-        //}
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //    transform.rotation = Quaternion.LookRotation(Vector3.right);
-        //}
+        if (estadoMovimiento == true) {
 
-        if (horizontal < 0 && mirandoDerecha == true || horizontal>0 && mirandoDerecha == false) {
-            mirandoDerecha = !mirandoDerecha;
-            if (mirandoDerecha == true)
+            estadoActual.UpdateEstado();
+            horizontal = Input.GetAxis("Horizontal");
+            _anim.SetFloat("Horizontal", horizontal);
+            //vertical = Input.GetAxis("vertical");
+            Debug.Log(_rb.velocity.y);
+
+
+
+            _anim.SetFloat("velocidadY", _rb.velocity.y);
+
+            _anim.SetBool("Agachado", Input.GetKey(teclaAgachado));
+
+            if (horizontal < 0 && mirandoDerecha == true || horizontal > 0 && mirandoDerecha == false)
             {
-                rotacionObjetivoY = 90;
-            }
-            else {
-                rotacionObjetivoY = -90;
+                mirandoDerecha = !mirandoDerecha;
+                if (mirandoDerecha == true)
+                {
+                    rotacionObjetivoY = 90;
+                }
+                else
+                {
+                    rotacionObjetivoY = -90;
+                }
             }
         }
+
+        
 
         if (transform.eulerAngles.y != rotacionObjetivoY) {
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.Euler(transform.eulerAngles.x, rotacionObjetivoY, transform.eulerAngles.z), velocidadRotacion * Time.deltaTime);
         }
 
-        _anim.SetFloat("velocidadY", _rb.velocity.y);
-
-        _anim.SetBool("Agachado", Input.GetKey(teclaAgachado));
+        
 
     }
 
     private void FixedUpdate()
     {
-        estadoActual.FixedUpdateEstado();
+        if (estadoMovimiento == true)
+        {
+            estadoActual.FixedUpdateEstado();
+        }
+        
         DetectarPiso();
 
     }
@@ -138,5 +150,10 @@ public class MovimientoJugador : MonoBehaviour
     {
         //Gizmos.DrawRay(transform.position, Vector3.down * distancia);
         Gizmos.DrawWireCube(pivoteDeteccion.position, detect);
+    }
+
+    public void ActivarMovimiento() { 
+    
+    estadoMovimiento = true;
     }
 }
