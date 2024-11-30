@@ -8,7 +8,8 @@ public class AdministradorJuego : MonoBehaviour
     public EstadosJuegoDelegado EventoJuegoIniciado;
 
     public static AdministradorJuego instance;
-    [SerializeField] ControladorTiempo contadorInicio; 
+    [SerializeField] Temporizador temporizador; 
+    [SerializeField] Cronometro cronometro; 
 
     private void Awake()
     {
@@ -24,17 +25,20 @@ public class AdministradorJuego : MonoBehaviour
 
     }
 
-    public void IniciarJuego() 
-    {
-        EventoJuegoIniciado?.Invoke();
-        Debug.Log("Juego iniciado");
-    }
+    
     
     public void PrepararJuego() 
     {
-        contadorInicio.eventoContadorFinalizado += IniciarJuego;
-        contadorInicio.IniciarContador(3f);
+        temporizador.eventoContadorFinalizado += IniciarJuego;
+        temporizador.IniciarTemporizador(3f);
     
+    }
+
+    public void IniciarJuego()
+    {
+        EventoJuegoIniciado?.Invoke();
+        Debug.Log("Juego iniciado");
+        cronometro.IniciarCronometro();
     }
 
     public void PausarJuego() 
