@@ -4,11 +4,22 @@ using UnityEngine;
 
 public abstract class ControladorTiempo : MonoBehaviour
 {
-    protected float tiempoActual;
-    protected bool activado = false;
 
-    public void Iniciar(float tiempo)
+    public delegate void DelegadoEstadosTIempo();
+    public DelegadoEstadosTIempo eventoTiempoIniciado;
+    public DelegadoEstadosTIempo eventoTiempoFinalizado;
+
+
+    public delegate void DelegadoCambioTiempo(float nuevoTiempo);
+    public DelegadoCambioTiempo eventoTiempoModificado;
+
+    [SerializeField]protected float tiempoActual;
+
+    [SerializeField] protected bool activado = false;
+
+    public virtual void Iniciar(float tiempo)
     {
+        eventoTiempoIniciado?.Invoke();
         tiempoActual = tiempo;
         activado = true;
     }

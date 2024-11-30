@@ -29,8 +29,8 @@ public class AdministradorJuego : MonoBehaviour
     
     public void PrepararJuego() 
     {
-        temporizador.eventoContadorFinalizado += IniciarJuego;
-        temporizador.IniciarTemporizador(3f);
+        temporizador.eventoTiempoFinalizado += IniciarJuego;
+        temporizador.Iniciar(3f);
     
     }
 
@@ -38,7 +38,7 @@ public class AdministradorJuego : MonoBehaviour
     {
         EventoJuegoIniciado?.Invoke();
         Debug.Log("Juego iniciado");
-        cronometro.IniciarCronometro();
+        cronometro.Iniciar(0);
     }
 
     public void PausarJuego() 

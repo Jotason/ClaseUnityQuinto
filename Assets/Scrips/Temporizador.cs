@@ -2,41 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Temporizador : MonoBehaviour
+public class Temporizador : ControladorTiempo
 {
 
-    public delegate void ContadorDelegado();
-    public ContadorDelegado eventoContadorIniciado;
-    public ContadorDelegado eventoContadorFinalizado;
+    float tiempoInicial;
 
-    [SerializeField]float tiempoActual;
-    bool contadorActivado = false;
-
-
-    //private void Start()
-    //{
-    //    IniciarContador(10f);
-    //}
-    public void IniciarTemporizador(float tiempo)
+    public override void Iniciar(float tiempo)
     {
-        tiempoActual = tiempo;
-        contadorActivado = true;
-        eventoContadorIniciado?.Invoke();
+        tiempoInicial = tiempo;
+        base.Iniciar(tiempo);   
     }
 
     private void Update()
     {
-        if (contadorActivado == true)
+        if (activado == true)
         {
             tiempoActual -= Time.deltaTime;
+            eventoTiempoModificado?.Invoke(tiempoActual);
             if (tiempoActual <= 0)
             {
-                eventoContadorFinalizado?.Invoke();
                 Debug.Log("finalizo el contador");
-                contadorActivado = false;
+                Finalizar();
             }
         }
+
+        
     }
 
+    public override void Reiniciar()
+    {
+        Iniciar(tiempoInicial);
+    }
 
+    public override void Finalizar()
+    {
+        eventoTiempoFinalizado?.Invoke();
+        activado = false;
+    }
 }

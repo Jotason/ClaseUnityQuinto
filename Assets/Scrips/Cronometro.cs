@@ -9,18 +9,21 @@ public class Cronometro : ControladorTiempo
         if (activado == true)
         {
             tiempoActual += Time.deltaTime;
+
+            eventoTiempoModificado?.Invoke(tiempoActual);
         }
 
     }
 
     public override void Reiniciar()
     {
-        tiempoActual = 0;
+        //tiempoActual = 0;
         Iniciar(0);
     }
 
     public override void Finalizar()
     {
+        eventoTiempoFinalizado?.Invoke();
         activado = false;
     }
 }
