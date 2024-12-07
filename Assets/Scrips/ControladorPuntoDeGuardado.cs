@@ -27,4 +27,8 @@ public class ControladorPuntoDeGuardado : MonoBehaviour
         puntoActual = nuevoPunto;
     
     }
+
+    public PuntoDeControl ObtenerUltimoPunto() {
+        return puntoActual;
+    }
 }

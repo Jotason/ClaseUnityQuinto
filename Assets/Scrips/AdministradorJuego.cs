@@ -6,6 +6,7 @@ public class AdministradorJuego : MonoBehaviour
 {
     public delegate void EstadosJuegoDelegado();
     public EstadosJuegoDelegado EventoJuegoIniciado;
+    public EstadosJuegoDelegado EventoJuegoFinalizado;
 
     public static AdministradorJuego instance;
     [SerializeField] Temporizador temporizador; 
@@ -52,8 +53,10 @@ public class AdministradorJuego : MonoBehaviour
     }
 
     public void FinalizarJuego() 
-    { 
-    
+    {
+        EventoJuegoFinalizado?.Invoke();
+        cronometro.Pausar();
+
     
     }
 

@@ -67,6 +67,7 @@ public class MovimientoJugador : MonoBehaviour
         CambiarEstado(_idle);
 
         AdministradorJuego.instance.EventoJuegoIniciado += ActivarMovimiento;
+        AdministradorJuego.instance.EventoJuegoFinalizado += DesactivarMovimiento;
 
     }
 
@@ -155,5 +156,18 @@ public class MovimientoJugador : MonoBehaviour
     public void ActivarMovimiento() { 
     
     estadoMovimiento = true;
+    }
+    
+    public void DesactivarMovimiento() { 
+    
+    estadoMovimiento = false;
+        _anim.SetFloat("Horizontal", 0);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Respawn")) {
+            transform.position = ControladorPuntoDeGuardado.instancia.ObtenerUltimoPunto().transform.position;
+        }
     }
 }
