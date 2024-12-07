@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Temporizador : ControladorTiempo
 {
+    [SerializeField]UnityEvent eventosUnityTiempoFinalizado;
 
     float tiempoInicial;
 
@@ -36,6 +38,7 @@ public class Temporizador : ControladorTiempo
 
     public override void Finalizar()
     {
+        eventosUnityTiempoFinalizado?.Invoke();
         eventoTiempoFinalizado?.Invoke();
         activado = false;
     }
