@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ControladorEnemigo : MonoBehaviour
 {
     Animator anim;
+    NavMeshAgent agente;
+
     [SerializeField] Transform pivoteCapsula;
     [SerializeField] Transform pivoteCapsula2;
     [SerializeField] float radio;
@@ -12,10 +15,21 @@ public class ControladorEnemigo : MonoBehaviour
     Collider[] colisiones;
     [SerializeField] bool objetivo;
     [SerializeField]  float distancia;
+
+    [SerializeField] List<Transform> posicionesPatrullaje = new List<Transform>();
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();    
+        agente = GetComponent<NavMeshAgent>();
+
+        //agente.SetDestination(posicionesPatrullaje[0].position);
+    }
+
+    private void Update()
+    {
+        agente.SetDestination(posicionesPatrullaje[0].position);
     }
 
     // Update is called once per frame
