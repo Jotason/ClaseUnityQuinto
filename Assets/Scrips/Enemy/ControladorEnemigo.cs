@@ -6,7 +6,11 @@ using UnityEngine.AI;
 public class ControladorEnemigo : MonoBehaviour
 {
     Animator anim;
-    NavMeshAgent agente;
+
+    public NavMeshAgent Agt { get => agente; set => agente = value; }
+    private NavMeshAgent agente;
+    
+    
 
     [SerializeField] Transform pivoteCapsula;
     [SerializeField] Transform pivoteCapsula2;
@@ -16,7 +20,10 @@ public class ControladorEnemigo : MonoBehaviour
     [SerializeField] bool objetivo;
     [SerializeField]  float distancia;
 
+
+    public List<Transform> PosicionesPatrullaje { get => posicionesPatrullaje; set => posicionesPatrullaje = value; }
     [SerializeField] List<Transform> posicionesPatrullaje = new List<Transform>();
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +34,14 @@ public class ControladorEnemigo : MonoBehaviour
         //agente.SetDestination(posicionesPatrullaje[0].position);
     }
 
-    private void Update()
-    {
-        agente.SetDestination(posicionesPatrullaje[0].position);
-    }
+
+
+
+    //private void Update()
+    //{
+    //    agente.SetDestination(posicionesPatrullaje[0].position);
+    //    //NavMesh.SamplePosition() //Poner un lugar cercano 
+    //}
 
     // Update is called once per frame
     private void FixedUpdate()
@@ -58,4 +69,6 @@ public class ControladorEnemigo : MonoBehaviour
         Gizmos.DrawWireSphere(pivoteCapsula2.position ,radio);
 
     }
+
+
 }
