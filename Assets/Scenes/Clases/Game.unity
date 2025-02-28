@@ -347,7 +347,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconEmpty: {fileID: 38392800}
-  itemIcon: {fileID: 5422108344259175889, guid: 34600bae01b1a3c4090b776f9378b8da, type: 3}
+  itemIcon: {fileID: 5422108344259175889, guid: 34600bae01b1a3c4090b776f9378b8da,
+    type: 3}
   equipSlot: {fileID: 568431842}
 --- !u!54 &300591435
 Rigidbody:
@@ -1038,7 +1039,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
