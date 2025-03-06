@@ -12,7 +12,6 @@ Material:
   m_Parent: {fileID: 2100000, guid: 7bef8d69d024f5e49aeec79098fa4c57, type: 2}
   m_ModifiedSerializedProperties: 16
   m_ValidKeywords:
-  - _ALPHAPREMULTIPLY_ON
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -30,15 +29,18 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
+    - _BlendModePreserveSpecular: 0
     - _DstBlend: 10
     - _DstBlendAlpha: 10
     - _Mode: 3
-    - _Smoothness: 0.425
+    - _Smoothness: 0
+    - _SrcBlend: 5
     - _Surface: 1
+    - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0, g: 1, b: 0, a: 0.43137255}
-    - _Color: {r: 0, g: 1, b: 0, a: 0.43137255}
+    - _BaseColor: {r: 0, g: 1, b: 0, a: 0}
+    - _Color: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1153648263853290137
 MonoBehaviour:

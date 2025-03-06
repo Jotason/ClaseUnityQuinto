@@ -3,7 +3,17 @@ guid: 6784f609b36dcb14e877bf5cc91a19f0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AIRPORT
+    second: {fileID: 2100000, guid: e0db8f595d1560b45aca5ef78d8af96e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: COLLIDERS
+    second: {fileID: 2100000, guid: 5c55fd866f4d8b342a88de351a1c11d0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
