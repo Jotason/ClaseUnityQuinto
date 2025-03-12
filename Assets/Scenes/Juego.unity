@@ -4436,8 +4436,13 @@ PlayableDirector:
     value: {fileID: 1969034797}
   - key: {fileID: -7667638942219734529, guid: 50ca4f8c1da9ff1469ca849f44d40f50, type: 2}
     value: {fileID: 1969034797}
+  - key: {fileID: -4451803151224596773, guid: 50ca4f8c1da9ff1469ca849f44d40f50, type: 2}
+    value: {fileID: 417668080}
+  - key: {fileID: 3994508649968358918, guid: 50ca4f8c1da9ff1469ca849f44d40f50, type: 2}
+    value: {fileID: 15210148}
   m_ExposedReferences:
-    m_References: []
+    m_References:
+    - 1c019fee6aaa7c544b0805dd4b66142c: {fileID: 417668078}
 --- !u!4 &1034716582
 Transform:
   m_ObjectHideFlags: 0
@@ -72570,7 +72575,9 @@ MonoBehaviour:
   m_Waypoints:
   - position: {x: 0, y: 0, z: -5}
     roll: 0
-  - position: {x: 0, y: 0, z: 5}
+  - position: {x: 0, y: 9.598087, z: 5}
+    roll: 0
+  - position: {x: 0, y: 0, z: 15}
     roll: 0
 --- !u!4 &2128007578
 Transform:
