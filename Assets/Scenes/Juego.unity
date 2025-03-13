@@ -4456,8 +4456,6 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -4475656005835179243, guid: 50ca4f8c1da9ff1469ca849f44d40f50, type: 2}
     value: {fileID: 1969034797}
-  - key: {fileID: -7667638942219734529, guid: 50ca4f8c1da9ff1469ca849f44d40f50, type: 2}
-    value: {fileID: 1969034797}
   - key: {fileID: -4451803151224596773, guid: 50ca4f8c1da9ff1469ca849f44d40f50, type: 2}
     value: {fileID: 417668080}
   - key: {fileID: 3994508649968358918, guid: 50ca4f8c1da9ff1469ca849f44d40f50, type: 2}
@@ -72601,11 +72599,11 @@ MonoBehaviour:
     width: 0.2
   m_Looped: 0
   m_Waypoints:
-  - position: {x: -1.6422122, y: 0, z: -6.7861767}
+  - position: {x: -1.96, y: 1.4, z: -6.7861767}
     roll: 0
-  - position: {x: -13.143992, y: -1.2767744, z: 1.0677733}
+  - position: {x: -13.143992, y: 2.49, z: 1.0677733}
     roll: 0
-  - position: {x: -2.0984704, y: 0, z: 8.922245}
+  - position: {x: -2.0984704, y: 1.18, z: 8.922245}
     roll: 0
 --- !u!4 &2128007578
 Transform:
