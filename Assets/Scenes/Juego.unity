@@ -72601,9 +72601,11 @@ MonoBehaviour:
   m_Waypoints:
   - position: {x: -1.96, y: 1.4, z: -6.7861767}
     roll: 0
-  - position: {x: -13.143992, y: 2.49, z: 1.0677733}
+  - position: {x: -13.143992, y: 3.3632207, z: -2.5723825}
     roll: 0
-  - position: {x: -2.0984704, y: 1.18, z: 8.922245}
+  - position: {x: -14.24591, y: -0.23001003, z: 5.5067225}
+    roll: 0
+  - position: {x: -1.737551, y: 1.133028, z: 10.249787}
     roll: 0
 --- !u!4 &2128007578
 Transform:
