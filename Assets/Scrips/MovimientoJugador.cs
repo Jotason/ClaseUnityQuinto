@@ -82,11 +82,11 @@ public class MovimientoJugador : MonoBehaviour
             horizontal = Input.GetAxis("Horizontal");
             _anim.SetFloat("Horizontal", horizontal);
             //vertical = Input.GetAxis("vertical");
-            Debug.Log(_rb.velocity.y);
+            Debug.Log(_rb.linearVelocity.y);
 
 
 
-            _anim.SetFloat("velocidadY", _rb.velocity.y);
+            _anim.SetFloat("velocidadY", _rb.linearVelocity.y);
 
             _anim.SetBool("Agachado", Input.GetKey(teclaAgachado));
 

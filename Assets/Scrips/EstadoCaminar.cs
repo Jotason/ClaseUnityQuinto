@@ -39,7 +39,7 @@ public class EstadoCaminar : EstadoBase
         else
         {
 
-            if (controlador._rb.velocity.y <= 0)
+            if (controlador._rb.linearVelocity.y <= 0)
             {
                 SalidaEstado(controlador._caer);
             }
@@ -49,7 +49,7 @@ public class EstadoCaminar : EstadoBase
     public override void FixedUpdateEstado()
     {
 
-        controlador._rb.velocity = new Vector3(controlador.horizontal * controlador.velocidadMovimiento, controlador._rb.velocity.y, controlador._rb.velocity.z);
+        controlador._rb.linearVelocity = new Vector3(controlador.horizontal * controlador.velocidadMovimiento, controlador._rb.linearVelocity.y, controlador._rb.linearVelocity.z);
         
     }
     public override void SalidaEstado(EstadoBase nuevoEstado)

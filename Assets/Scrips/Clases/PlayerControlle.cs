@@ -10,8 +10,8 @@ public class PlayerControlle : MonoBehaviour
     public Vector2 sensitivity;
     public new Transform camera;
     public float smoothCrouch;
-    //private ItemControlle currentItem; // Variable para almacenar el ítem actual
-    //private bool hasItem = false; // Estado para verificar si el jugador tiene un ítem
+    //private ItemControlle currentItem; // Variable para almacenar el ï¿½tem actual
+    //private bool hasItem = false; // Estado para verificar si el jugador tiene un ï¿½tem
     public bool crouch;
     void Start()
     {
@@ -25,7 +25,7 @@ public class PlayerControlle : MonoBehaviour
         Movement();
         MouseLook();
         Crouch();
-        //// Detectar si se presiona la tecla E para recoger o soltar el ítem
+        //// Detectar si se presiona la tecla E para recoger o soltar el ï¿½tem
         //if (Input.GetKeyDown(KeyCode.E))
         //{
         //    if (currentItem != null)
@@ -33,13 +33,13 @@ public class PlayerControlle : MonoBehaviour
         //        if (!hasItem)
         //        {
         //            currentItem.CollectorItem();
-        //            hasItem = true; // El jugador ahora tiene el ítem
+        //            hasItem = true; // El jugador ahora tiene el ï¿½tem
         //        }
         //        else
         //        {
         //            currentItem.DropItem();
-        //            hasItem = false; // El jugador ya no tiene el ítem
-        //            currentItem = null; // Limpia la referencia al ítem
+        //            hasItem = false; // El jugador ya no tiene el ï¿½tem
+        //            currentItem = null; // Limpia la referencia al ï¿½tem
         //        }
         //    }
         //}
@@ -55,8 +55,8 @@ public class PlayerControlle : MonoBehaviour
             Vector3 direction = (transform.forward * verticalInput + transform.right * horizontalInput).normalized;
             velocity = direction * speed;
         }
-        velocity.y = rigidbody.velocity.y;
-        rigidbody.velocity = velocity;
+        velocity.y = rigidbody.linearVelocity.y;
+        rigidbody.linearVelocity = velocity;
 
 
 
@@ -91,17 +91,17 @@ public class PlayerControlle : MonoBehaviour
     }
     //private void OnTriggerEnter(Collider other)
     //{
-    //    // Verificar si el objeto con el que colisionamos es un ítem
+    //    // Verificar si el objeto con el que colisionamos es un ï¿½tem
     //    ItemControlle item = other.GetComponent<ItemControlle>();
     //    if (item != null)
     //    {
-    //        currentItem = item; // Guardar el ítem actual
+    //        currentItem = item; // Guardar el ï¿½tem actual
     //    }
     //}
 
     //private void OnTriggerExit(Collider other)
     //{
-    //    // Limpiar la referencia cuando el jugador sale del área del ítem
+    //    // Limpiar la referencia cuando el jugador sale del ï¿½rea del ï¿½tem
     //    if (other.GetComponent<ItemControlle>() != null)
     //    {
     //        currentItem = null;

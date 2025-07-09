@@ -20,7 +20,7 @@ public class EstadoSalto : EstadoBase
     {
         Debug.Log("aaa");
 
-        if (controlador._rb.velocity.y <= 0)
+        if (controlador._rb.linearVelocity.y <= 0)
         {
             if (controlador.tocandoPiso == false)
             {

@@ -38,7 +38,7 @@ public class EstadoIdle : EstadoBase
 
         else
         {
-            if (controlador._rb.velocity.y <= 0)
+            if (controlador._rb.linearVelocity.y <= 0)
             {
                 SalidaEstado(controlador._caer);
             }
