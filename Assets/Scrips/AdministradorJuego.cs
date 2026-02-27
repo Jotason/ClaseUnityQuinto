@@ -56,9 +56,15 @@ public class AdministradorJuego : MonoBehaviour
     {
         EventoJuegoFinalizado?.Invoke();
         cronometro.Pausar();
-
+        
     
     }
+
+    public float GetTime()
+    {
+        return cronometro.ObtenerTiempo();
+    }
+
 
 
 

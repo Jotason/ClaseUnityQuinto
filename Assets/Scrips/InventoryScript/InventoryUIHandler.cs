@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using TMPro.EditorUtilities;
-using UnityEngine.Events;
-using static UnityEditor.Experimental.GraphView.Port;
 
 public class InventoryUIHandler : MonoBehaviour
 {
