@@ -10,6 +10,7 @@ public class EstadoSeguirEnemigo : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         controlador = animator.GetComponent<ControladorEnemigo>();
+        controlador.Agt.speed = controlador.VelocidadSeguimiento;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -9,8 +9,9 @@ public class EstadoPatrullarEnemigo : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //Debug.Log("Entró a patrullar");
+        //Debug.Log("Entrï¿½ a patrullar");
         controlador = animator.GetComponent<ControladorEnemigo>();
+        controlador.Agt.speed = controlador.VelocidadPatrullaje;
         
     }
 
@@ -39,7 +40,7 @@ public class EstadoPatrullarEnemigo : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //Debug.Log("Dejó de patrullar");
+        //Debug.Log("Dejï¿½ de patrullar");
 
     }
 

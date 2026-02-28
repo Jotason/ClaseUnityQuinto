@@ -30,6 +30,12 @@ public class ControladorEnemigo : MonoBehaviour
     
     
     [SerializeField]  float distancia;
+    [SerializeField] float velocidadPatrullaje = 2f;
+    [SerializeField] float velocidadSeguimiento = 5f;
+
+
+    public float VelocidadPatrullaje { get => velocidadPatrullaje; }
+    public float VelocidadSeguimiento { get => velocidadSeguimiento; }
 
     [SerializeField] Vector3 fuerzaPatada;
 
